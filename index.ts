@@ -5,9 +5,10 @@ import {
   Tasks,
   deleteTask,
   reindexTasks,
+  saveTask,
   setIsDone,
 } from "./services/task.service";
-import { saveTasks, unloadFromFile } from "./services/file.service";
+import { saveTasksInFile, unloadFromFile } from "./services/file.service";
 import { ask, promptTitle, readline } from "./utils/prompt.utils";
 
 const MENU_TEXT = `
@@ -26,7 +27,7 @@ var menuStatus = 1;
 async function saveTasksProcess() {
   if (isEmptyTasks()) return;
   try {
-    await saveTasks(Tasks);
+    await saveTasksInFile(Tasks);
     console.log("Вы успешно сохранили все данные в файл");
   } catch {
     console.log("Ошибка сохранения данных в файл");
@@ -99,11 +100,10 @@ function getTasks(): void {
 
 async function addTaskProcess(): Promise<void> {
   const title = await promptTitle();
-  const id = Tasks.size + 1;
-  const task: Task = { id, title, isDone: false };
-  Tasks.set(id, task);
 
-  console.log(`Задача ${id} добавлена: "${title}"`);
+  const newTask = saveTask(title);
+
+  console.log(`Задача ${newTask.id} добавлена: "${newTask.title}"`);
 }
 
 async function menu(input: number): Promise<void> {

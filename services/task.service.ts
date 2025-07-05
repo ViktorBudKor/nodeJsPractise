@@ -22,8 +22,13 @@ export function reindexTasks(): void {
   Tasks.clear();
   Tasks = newTasks;
 }
-
-export function setIsDone(id: number) {
+export function saveTask(title: string): Task {
+  const id = Tasks.size + 1;
+  const task: Task = { id, title, isDone: false };
+  Tasks.set(id, task);
+  return task;
+}
+export function setIsDone(id: number): void {
   const task = Tasks.get(id);
   if (!task) {
     console.log("Вы ввели неверный id");

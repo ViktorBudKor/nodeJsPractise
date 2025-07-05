@@ -1,7 +1,9 @@
 import * as fs from "fs";
 import { Task } from "../interfaces/task.interface";
 
-export async function saveTasks(tasksMap: Map<number, Task>): Promise<void> {
+export async function saveTasksInFile(
+  tasksMap: Map<number, Task>
+): Promise<void> {
   const tasksArray: Task[] = [];
   for (let task of tasksMap.values()) {
     tasksArray.push(task);
