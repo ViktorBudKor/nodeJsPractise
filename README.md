@@ -36,7 +36,7 @@ npm install
 npx tsc
 ```
 
-   Это скомпилирует все указанные файлы в папку `dist/`. Далее запустите приложение:
+Это скомпилирует все указанные файлы в папку `dist/`. Далее запустите приложение:
 
 3. Запустите приложение:
 
@@ -59,7 +59,8 @@ node dist/index.js
 
 - `ask(question: string): Promise<string>` — Запрашивает ввод из консоли.
 - `promptTitle(): Promise<string>` — Валидирует и запрашивает корректное название задачи.
-- `saveTasks(tasksMap: Map<number, Task>)` — Записывает все задачи в файл.
+- `saveTasksInFile(tasksMap: Map<number, Task>)` — Записывает все задачи в файл.
+- `saveTask(title: string): Task` — Добавляет новую задачу.
 - `unloadFromFile(Tasks: Map<number, Task>)` — Читает задачи из файла и загружает их в память.
 - `deleteTask(id: number): boolean` — Удаляет задачу по идентификатору.
 - `reindexTasks()` — Переиндексирует ключи задач в Map.
