@@ -1,0 +1,24 @@
+{
+  "devDependencies": {
+    "@types/node": "^24.0.10",
+    "typescript": "^5.8.3"
+  },
+  "name": "nodejspractise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViktorBudKor/nodeJsPractise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ViktorBudKor/nodeJsPractise/issues"
+  },
+  "homepage": "https://github.com/ViktorBudKor/nodeJsPractise#readme"
+}
